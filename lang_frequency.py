@@ -24,8 +24,6 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('-p', '--path', help='Path to file', required=True)
     args = parser.parse_args()
-    if not args:
-        print('You didn\'t pass \'path\' arguments')
     text = load_data(args.path)
     result = get_most_frequent_words(text)
     print(result)
