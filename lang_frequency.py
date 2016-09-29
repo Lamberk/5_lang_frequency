@@ -20,10 +20,15 @@ def get_most_frequent_words(text):
     return counter.most_common(TOP_SIZE)
 
 
+def print_result(input_data):
+    for item in input_data:
+        print('Слово: "{}"'.format(item[0]), 'Кол-во употреблений:', item[1])
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('-p', '--path', help='Path to file', required=True)
     args = parser.parse_args()
     text = load_data(args.path)
     result = get_most_frequent_words(text)
-    print(result)
+    print_result(result)
